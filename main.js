@@ -40,7 +40,7 @@ let Rechte = "Du bist nicht dafür berechtigt! Sollte dies ein Fehler sein wende
 
 var bot = new Discord.Client()
 
-bot.login(process.env.token)
+bot.login(config.token)
 
 
 //Bot-Einstellungen --> Wenn READY
@@ -189,22 +189,22 @@ bot.on('message', (message) => {
         
 
 
-        fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
-        fs.writeFile("data/banumgehung.json",JSON.stringify(Banumgehung))
-        fs.writeFile("data/beleidigung_leicht.json",JSON.stringify(Beleidigung_leicht))
-        fs.writeFile("data/beleidigung_schwer.json",JSON.stringify(Beleidigung_schwer))
-        fs.writeFile("data/caps.json",JSON.stringify(Caps))
-        fs.writeFile("data/erwähnung.json",JSON.stringify(Erwähnung))
-        fs.writeFile("data/hasserfüllte_inhalte.json",JSON.stringify(Hasserfüllte_Inhalte))
-        fs.writeFile("data/pornografische_inhalte.json",JSON.stringify(Pornografische_Inhalte))
-        fs.writeFile("data/rassismus.json",JSON.stringify(Rassismus))
-        fs.writeFile("data/rufschädigung.json",JSON.stringify(Rufschädigung))
-        fs.writeFile("data/spamming.json",JSON.stringify(Spamming))
-        fs.writeFile("data/unangemessenes_verhalten.json",JSON.stringify(Unangemessenes_Verhalten))
-        fs.writeFile("data/unerlaubtes_aufnehmen.json",JSON.stringify(Unerlaubtes_Aufnehmen))
-        fs.writeFile("data/werbung_erwärnung.json",JSON.stringify(Werbung_Erwärnung))
-        fs.writeFile("data/werbung_öffentlich.json",JSON.stringify(Werbung_Öffentlich));
-        fs.writeFile("data/werbung_pn.json",JSON.stringify(Werbung_PN));
+        fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
+        fs.writeFileSync("data/banumgehung.json",JSON.stringify(Banumgehung))
+        fs.writeFileSync("data/beleidigung_leicht.json",JSON.stringify(Beleidigung_leicht))
+        fs.writeFileSync("data/beleidigung_schwer.json",JSON.stringify(Beleidigung_schwer))
+        fs.writeFileSync("data/caps.json",JSON.stringify(Caps))
+        fs.writeFileSync("data/erwähnung.json",JSON.stringify(Erwähnung))
+        fs.writeFileSync("data/hasserfüllte_inhalte.json",JSON.stringify(Hasserfüllte_Inhalte))
+        fs.writeFileSync("data/pornografische_inhalte.json",JSON.stringify(Pornografische_Inhalte))
+        fs.writeFileSync("data/rassismus.json",JSON.stringify(Rassismus))
+        fs.writeFileSync("data/rufschädigung.json",JSON.stringify(Rufschädigung))
+        fs.writeFileSync("data/spamming.json",JSON.stringify(Spamming))
+        fs.writeFileSync("data/unangemessenes_verhalten.json",JSON.stringify(Unangemessenes_Verhalten))
+        fs.writeFileSync("data/unerlaubtes_aufnehmen.json",JSON.stringify(Unerlaubtes_Aufnehmen))
+        fs.writeFileSync("data/werbung_erwärnung.json",JSON.stringify(Werbung_Erwärnung))
+        fs.writeFileSync("data/werbung_öffentlich.json",JSON.stringify(Werbung_Öffentlich));
+        fs.writeFileSync("data/werbung_pn.json",JSON.stringify(Werbung_PN));
 
         return message.channel.send(`Es wurde alles von ${mPlayer} gelöscht!`);
 
@@ -282,8 +282,8 @@ bot.on('message', (message) => {
             Beleidigung_leicht[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/beleidigung_leicht.json",JSON.stringify(Beleidigung_leicht))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/beleidigung_leicht.json",JSON.stringify(Beleidigung_leicht))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -300,8 +300,8 @@ bot.on('message', (message) => {
             Beleidigung_schwer[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/beleidigung_schwer.json",JSON.stringify(Beleidigung_schwer))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/beleidigung_schwer.json",JSON.stringify(Beleidigung_schwer))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -315,8 +315,8 @@ bot.on('message', (message) => {
             Caps[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/caps.json",JSON.stringify(Caps))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/caps.json",JSON.stringify(Caps))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
             
             info123();
 
@@ -329,8 +329,8 @@ bot.on('message', (message) => {
             Erwähnung[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/erwähnung.json",JSON.stringify(Erwähnung))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/erwähnung.json",JSON.stringify(Erwähnung))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -346,8 +346,8 @@ bot.on('message', (message) => {
             Hasserfüllte_Inhalte[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/hasserfüllte_inhalte.json",JSON.stringify(Hasserfüllte_Inhalte))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/hasserfüllte_inhalte.json",JSON.stringify(Hasserfüllte_Inhalte))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -364,8 +364,8 @@ bot.on('message', (message) => {
             Pornografische_Inhalte[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/pornografische_inhalte.json",JSON.stringify(Pornografische_Inhalte))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/pornografische_inhalte.json",JSON.stringify(Pornografische_Inhalte))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -382,8 +382,8 @@ bot.on('message', (message) => {
             Rassismus[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/rassismus.json",JSON.stringify(Rassismus))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/rassismus.json",JSON.stringify(Rassismus))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -401,8 +401,8 @@ bot.on('message', (message) => {
             Rufschädigung[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/rufschädigung.json",JSON.stringify(Rufschädigung))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/rufschädigung.json",JSON.stringify(Rufschädigung))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -420,8 +420,8 @@ bot.on('message', (message) => {
             Spamming[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/spamming.json",JSON.stringify(Spamming))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/spamming.json",JSON.stringify(Spamming))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -439,8 +439,8 @@ bot.on('message', (message) => {
             Unangemessenes_Verhalten[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/unangemessenes_verhalten.json",JSON.stringify(Unangemessenes_Verhalten))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/unangemessenes_verhalten.json",JSON.stringify(Unangemessenes_Verhalten))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -459,8 +459,8 @@ bot.on('message', (message) => {
             Unerlaubtes_Aufnehmen[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/unerlaubtes_aufnehmen.json",JSON.stringify(Unerlaubtes_Aufnehmen))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/unerlaubtes_aufnehmen.json",JSON.stringify(Unerlaubtes_Aufnehmen))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -478,8 +478,8 @@ bot.on('message', (message) => {
             Werbung_Erwärnung[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/werbung_erwärnung.json",JSON.stringify(Werbung_Erwärnung))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/werbung_erwärnung.json",JSON.stringify(Werbung_Erwärnung))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -497,8 +497,8 @@ bot.on('message', (message) => {
             Werbung_Öffentlich[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/werbung_öffentlich.json",JSON.stringify(Werbung_Öffentlich))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/werbung_öffentlich.json",JSON.stringify(Werbung_Öffentlich))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -516,8 +516,8 @@ bot.on('message', (message) => {
             Werbung_PN[mPlayer.id]++;
     
             message.channel.send(`Der Spieler ${mPlayer} hat eine Strafe erhalten wegen ${grund} erhalten!`);
-            fs.writeFile("data/werbung_pn.json",JSON.stringify(Werbung_PN))
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("data/werbung_pn.json",JSON.stringify(Werbung_PN))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
             info123();
 
@@ -572,7 +572,7 @@ bot.on('message', (message) => {
         NumberOfWarns[mPlayer.id] -= punkte;
 
         message.channel.send(`Dem Spieler ${mPlayer} wurden ${punkte} entfernt, da ${grund}`);
-        fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+        fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
 
     } else {
@@ -667,7 +667,7 @@ function info123(){
             
     let bicom = bot.user.displayAvatarURL;
 
-    fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+    fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
     let em = new Discord.RichEmbed()
     .setAuthor("Moderation-Bot", bicom)
@@ -712,7 +712,7 @@ function info123(){
 
         let bicom = bot.user.displayAvatarURL;
 
-        fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+        fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
         
         //P-massage
         let em = new Discord.RichEmbed()
@@ -787,7 +787,7 @@ if(NumberOfWarns[mPlayer.id] <= 55) {
 
     let bicom = bot.user.displayAvatarURL;
 
-    fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+    fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
 
     let em = new Discord.RichEmbed()
     .setAuthor("Moderation-Bot", bicom)
@@ -856,7 +856,7 @@ if (NumberOfWarns[mPlayer.id] > 55) {
     
         let bicom = bot.user.displayAvatarURL;
     
-        fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+        fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
     
         let em = new Discord.RichEmbed()
         .setAuthor("Moderation-Bot", bicom)
@@ -926,7 +926,7 @@ if (NumberOfWarns[mPlayer.id] > 55) {
         
             let bicom = bot.user.displayAvatarURL;
         
-            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
         
             let em = new Discord.RichEmbed()
             .setAuthor("Moderation-Bot", bicom)
@@ -996,7 +996,7 @@ if (NumberOfWarns[mPlayer.id] > 55) {
             
                 let bicom = bot.user.displayAvatarURL;
             
-                fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+                fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
             
                 let em = new Discord.RichEmbed()
                 .setAuthor("Moderation-Bot", bicom)
@@ -1066,7 +1066,7 @@ if (NumberOfWarns[mPlayer.id] > 55) {
                 
                     let bicom = bot.user.displayAvatarURL;
                 
-                    fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+                    fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
                 
                     let em = new Discord.RichEmbed()
                     .setAuthor("Moderation-Bot", bicom)
@@ -1134,7 +1134,7 @@ if (NumberOfWarns[mPlayer.id] > 55) {
                     
                         let bicom = bot.user.displayAvatarURL;
                     
-                        fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+                        fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
                     
                         let em = new Discord.RichEmbed()
                         .setAuthor("Moderation-Bot", bicom)
@@ -1187,7 +1187,7 @@ if (NumberOfWarns[mPlayer.id] > 55) {
                         
                             let bicom = bot.user.displayAvatarURL;
                         
-                            fs.writeFile("warns.json",JSON.stringify(NumberOfWarns))
+                            fs.writeFileSync("warns.json",JSON.stringify(NumberOfWarns))
                         
                             let em = new Discord.RichEmbed()
                             .setAuthor("Moderation-Bot", bicom)
