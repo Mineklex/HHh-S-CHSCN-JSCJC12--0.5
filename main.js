@@ -40,7 +40,7 @@ let Rechte = "Du bist nicht dafür berechtigt! Sollte dies ein Fehler sein wende
 
 var bot = new Discord.Client()
 
-bot.login(config.token)
+bot.login(process.env.token)
 
 
 //Bot-Einstellungen --> Wenn READY
