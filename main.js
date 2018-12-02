@@ -13,7 +13,7 @@ var datetime = "" + currentdate.getDate() + "."
 
 var bot = new Discord.Client()
 
-bot.login("NTE4ODUyOTc3OTgxNzg0MDc5.DuW8LQ.rXdV53yHhs5Dbuyot2TSLqAmg_I")
+bot.login(process.env.token)
 
 
 //Bot-Einstellungen --> Wenn READY
